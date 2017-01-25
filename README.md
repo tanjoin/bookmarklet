@@ -13,3 +13,9 @@ jQuery があることを前提に作成
 ```
 uglifyjs winlose.js --mangle --output winlose.min.js
 ```
+
+or
+
+```
+./minify.sh
+```
