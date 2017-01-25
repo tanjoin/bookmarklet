@@ -4,6 +4,12 @@
 
 jQuery があることを前提に作成
 
+## 一覧
+
+[https://tanjoin.github.io/bookmarklet](https://tanjoin.github.io/bookmarklet)
+
+## Dev
+
 ```
 uglifyjs winlose.js --mangle --output winlose.min.js
 ```
