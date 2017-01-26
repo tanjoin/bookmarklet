@@ -11,6 +11,14 @@
             <a href='javascript:(function(){$("#lose").css("display","none");$("#win").css("display","")})();'>[YJ]Win-Lose</a>
         </li>
     </ul>
+    <ul>
+        <li>
+            <a href="javascript:(function(){$.each($('[name=commit]'),function(c,i){if(i.value=='更新'){i.click()}})})();">[MF]一括実行</a>
+        </li>
+        <li>
+            <a href="javascript:(function(){var n=$('[name=commit]').filter(function(n,t){return t.value=='更新'});var t=0;setInterval(function(){if(n.length<=t){return}var e=n[t];e.click();t++},3e3)})();">[MF]3秒ごとに実行</a>
+        </li>
+    </ul>
 </body>
 
 </html>
