@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <h1>MF Bookmarklet</h1>
+    <h1>Bookmarklet</h1>
     <ul>
         <li>
             <a href='javascript:(function(){$("#lose").css("display","none");$("#win").css("display","")})();'>[YJ]Win-Lose</a>
@@ -21,7 +21,7 @@
     </ul>
     <ul>
         <li>
-            <a href='javascript:(function(){window.open("https://tanjoin.github.io/acc/maker.html?title="+document.title+"&url="+document.URL)})();'>[ACC]Maker</a>
+            <a href='javascript:(function(){window.open("https://tanjoin.github.io/acc/maker.html?title="+encodeURIComponent(document.title)+"&url="+encodeURIComponent(document.URL))})();'>[ACC]Maker</a>
         </li>
     </ul>
     <ul>
