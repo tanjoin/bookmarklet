@@ -11,4 +11,7 @@ gulp.task 'build', ->
     .pipe uglify()
     .pipe gulp.dest './'
 
-gulp.task 'default', ['build']
+gulp.task 'default', ['build', 'watch']
+
+gulp.task 'watch', ->
+  gulp.watch '*.js', ['build']
