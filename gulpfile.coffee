@@ -1,15 +1,16 @@
 gulp = require 'gulp'
 uglify = require 'gulp-uglify'
 rename = require 'gulp-rename'
+pump = require 'pump'
 
-gulp.task 'build', ->
-  gulp.src './js/*.js'
-    .pipe uglify()
-    .pipe rename(extname: '.min.js')
-    .pipe gulp.dest './js/min'
-  gulp.src './pug/*.pug'
-    .pipe uglify()
-    .pipe gulp.dest './'
+gulp.task 'build', (cb) ->
+  pump [
+      gulp.src './js/*.js'
+      uglify()
+      rename(extname: '.min.js')
+      gulp.dest './js/min'
+    ],
+    cb
 
 gulp.task 'default', ['build', 'watch']
 

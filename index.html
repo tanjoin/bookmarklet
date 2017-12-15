@@ -33,6 +33,11 @@
     </ul>
     <ul>
       <li>
+        <a href='javascript:(function(){var links=Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function(n){return"application/rss+xml"===n.type||"application/atom+xml"===n.type}).map(function(n){return n.href});prompt(links.join("\n"),links.join("\n"));})();'>[RSS]Get</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
         <a href='https://tanjoin.github.io/bookmarklet/js/min/chromecachesave.min.js'>[CC]キャッシュ保存</a>
         <p>実行するとファイルがダウンロードされるので 0xED に貼り付けてファイル名を `hoge.gz` みたいに付けて gz を解凍すると取り出せる.</p>
       </li>
