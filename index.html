@@ -1,51 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Bookmarklet</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <h1>Bookmarklet</h1>
     <ul>
-        <li>
-            <a href='javascript:(function(){$("#lose").css("display","none");$("#win").css("display","")})();'>[YJ]Win-Lose</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="javascript:(function(){$.each($('[name=commit]'),function(c,i){if(i.value=='更新'){i.click()}})})();">[MF]一括実行</a>
-        </li>
-        <li>
-            <a href="javascript:(function(){var n=$('[name=commit]').filter(function(n,t){return t.value=='更新'});var t=0;setInterval(function(){if(n.length<=t){return}var e=n[t];e.click();t++},3e3)})();">[MF]3秒ごとに実行</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href='javascript:(function(){window.open("https://tanjoin.github.io/acc/maker.html?title="+encodeURIComponent(document.title)+"&url="+encodeURIComponent(document.URL)+"&description="+encodeURIComponent(document.getSelection()))})();'>[ACC]Maker</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href='javascript:(function(){window.open(decodeURIComponent(display_movie_url))})();'>[HM]動画オープン</a>
-        </li>
-    </ul>
-    <ul>
-      <li>
-        <a href='javascript:(function(){var links=Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function(n){return"application/rss+xml"===n.type||"application/atom+xml"===n.type}).map(function(n){return n.href});prompt(links.join("\n"),links.join("\n"));})();'>[RSS]Get</a>
-      </li>
-    </ul>
-    <ul>
+      <li><a href='javascript:(function(){$("#lose").css("display","none");$("#win").css("display","")})();'>[YJ]Win-Lose</a></li>
+      <li><a href="javascript:(function(){$.each($('[name=commit]'),function(c,i){if(i.value=='更新'){i.click()}})})();">[MF]一括実行</a></li>
+      <li><a href="javascript:(function(){var n=$('[name=commit]').filter(function(n,t){return t.value=='更新'});var t=0;setInterval(function(){if(n.length<=t){return}var e=n[t];e.click();t++},3e3)})();">[MF]3秒ごとに実行</a></li>
+      <li><a href='javascript:(function(){window.open("https://tanjoin.github.io/acc/maker.html?title="+encodeURIComponent(document.title)+"&url="+encodeURIComponent(document.URL)+"&description="+encodeURIComponent(document.getSelection()))})();'>[ACC]Maker</a></li>
+      <li><a href='javascript:(function(){window.open(decodeURIComponent(display_movie_url))})();'>[HM]動画オープン</a></li>
+      <li><a href='javascript:(function(){var links=Array.prototype.slice.call(document.getElementsByTagName("link")).filter(function(n){return"application/rss+xml"===n.type||"application/atom+xml"===n.type}).map(function(n){return n.href});prompt(links.join("\n"),links.join("\n"));})();'>[RSS]Get</a></li>
       <li>
         <a href='https://tanjoin.github.io/bookmarklet/js/min/chromecachesave.min.js'>[CC]キャッシュ保存</a>
-        <p>実行するとファイルがダウンロードされるので 0xED に貼り付けてファイル名を `hoge.gz` みたいに付けて gz を解凍すると取り出せる.</p>
+        <ul><li>実行するとファイルがダウンロードされるので 0xED に貼り付けてファイル名を `hoge.gz` みたいに付けて gz を解凍すると取り出せる.</li></ul>
       </li>
-    </ul>
-    <ul>
-      <li>
-        <a href='javascript:(function(){window.open(location.href,"","width=480");})();'>[YT]小窓で開く</a>
-      </li>
+      <li><a href='javascript:(function(){window.open(location.href,"","width=480");})();'>[YT]小窓で開く</a></li>
+      <li><a href='javascript:(function(){[...document.querySelector("#DtlCampList > tbody").children].map((tr) => tr.children).reduce((accumulator, currentValue) => [...accumulator].concat([...currentValue])).filter((td) => td.children[0].querySelector("img.entry_icon").src.indexOf("IMG/icon_entry.gif") > 0).forEach((td) => td.style.display="none");})();'>[VN] 応募済みを非表示</a></li>
+      <li><a href='(function(){var s = document.createElement("script");s.src = "https://raw.githubusercontent.com/tanjoin/bookmarklet/gh-pages/js/joysound_myhistory.js";document.body.appendChild(s);})();'>[JoySound]マイりれき</a></li>
     </ul>
 </body>
 
