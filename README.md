@@ -8,8 +8,8 @@ jQuery があることを前提に作成
 
 [https://tanjoin.github.io/bookmarklet](https://tanjoin.github.io/bookmarklet)
 
-## Dev
+## 長いやつ
 
 ```
-./minify.sh
+(function(){var s = document.createElement("script");s.src = "https://raw.githubusercontent.com/tanjoin/bookmarklet/gh-pages/js/サンプル.js";document.body.appendChild(s);})();
 ```
