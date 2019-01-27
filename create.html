@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bookmarklet</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <main id="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h1>Bookmarklet</h1>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="scriptArea">Script</label>
+            <textarea class="form-control" rows="3" id="scriptArea" placeholder="script"></textarea>
+          </div>
+          <button id="generateLink" type="submit" class="btn btn-default">Submit</button>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div id="result" class="col-md-10"></div>
+        <div class="col-md-1"></div>
+      </div>
+    </main>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function run() {
+        [...document.getElementById('result').children].forEach((a) => document.getElementById('result').removeChild(a));
+        var s = "javascript:(() => { " + document.getElementById('scriptArea').value + " })();";
+        var a = document.createElement('a');
+        a.href= s;
+        a.innerText = "Link";
+        document.getElementById('result').appendChild(a);
+      }
+      document.addEventListener("DOMContentLoaded", () => document.getElementById('generateLink').addEventListener('click', () => run()));
+    </script>
+  </body>
+</html>
