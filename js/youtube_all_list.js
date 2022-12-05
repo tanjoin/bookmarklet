@@ -1,0 +1,1 @@
+window.open(window.location.href + "&list=UU" + document.querySelector('#watch7-content > meta[itemprop="channelId"]').content.slice(2));

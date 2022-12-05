@@ -8,6 +8,11 @@ jQuery があることを前提に作成
 
 [https://tanjoin.github.io/bookmarklet](https://tanjoin.github.io/bookmarklet)
 
+## 作成
+
+[https://tanjoin.github.io/bookmarklet/create.html](https://tanjoin.github.io/bookmarklet/create.html)
+
+
 ## 長いやつ
 
 ```
