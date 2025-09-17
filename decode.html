@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bookmarklet</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <main id="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h1>Bookmarklet</h1>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <label for="scriptArea">Script</label>
+            <textarea class="form-control" rows="3" id="scriptArea" placeholder="script"></textarea>
+          </div>
+          <button id="generateLink" type="submit" class="btn btn-default">Submit</button>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div id="result"></div>
+          <div id="copyButtonArea"></div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </main>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function run() {
+        [...document.getElementById('result').children].forEach((a) => document.getElementById('result').removeChild(a));
+        var span = document.createElement('span');
+        span.innerText = decodeURIComponent(document.getElementById('scriptArea').value);
+        document.getElementById('result').appendChild(span);
+        document.getElementById('result').style.margin = "10px 0px";
+        document.getElementById('result').style.padding = "10px";
+        document.getElementById('result').style.border = "1px solid black";
+        let copyButton = document.createElement('button');
+        copyButton.innerText = "Copy";
+        copyButton.className = "btn btn-default";
+        copyButton.onclick = copyToClipboard;
+        [...document.getElementById('copyButtonArea').children].forEach((a) => document.getElementById('copyButtonArea').removeChild(a));
+        document.getElementById('copyButtonArea').appendChild(copyButton);
+      }
+      document.addEventListener("DOMContentLoaded", () => document.getElementById('generateLink').addEventListener('click', () => run()));
+      // 
+      function copyToClipboard() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById('result'));
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();// to deselect
+      }
+    </script>
+  </body>
+</html>
